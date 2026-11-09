@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Genre Page</title>
+</head>
+
+    <h1>Genre Page</h1>
+
+    <form th:action="@{/genres}" th:object="${form}" method="get">
+        <div>   
+            <label for="genre">Genre</label>
+
+            <input type="text" id="genre" th:field="*{genre}" />
+
+            <span th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}">
+            </span>
+        </div>
+
+        <div>
+            <button type="submit">Save</button>
+        </div>
+
+    </form>
+</html>
